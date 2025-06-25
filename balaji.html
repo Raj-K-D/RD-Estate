@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balaji Vishwa | Kshitij Realty's Premium Plot Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --secondary: #263238;
+            --accent: #1976D2;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --text: #4A4A4A;
+            --gray: #6C757D;
+            --light-gray: #E9ECEF;
+            --white: #FFFFFF;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        section {
+            padding: var(--space-xl) 0;
+        }
+
+        /* Project Hero */
+        .project-hero {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            /* Disable right-click download */
+            pointer-events: none;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Disable video controls and download */
+        video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        /* For older browsers that don't support the playsinline attribute */
+        .hero-video {
+            object-fit: cover;
+        }
+
+        .project-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+        }
+
+        .project-tagline {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .project-highlights {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+            background: rgba(0, 0, 0, 0.7);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .highlight-item i {
+            color: var(--primary-light);
+        }
+
+        /* Overview Section */
+        .overview-section {
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: var(--space-sm) auto;
+            border-radius: var(--radius-sm);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+        }
+
+        .feature-list i {
+            color: var(--primary);
+            margin-top: 3px;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Video Section */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: var(--space-xl) auto;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        /* Location Section */
+        .location-section {
+            background: var(--white);
+        }
+
+        .location-section {
+            background: var(--white);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: start;
+        }
+
+        .map-container {
+            position: relative;
+            padding-bottom: 75%;
+            /* Slightly taller ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--light-gray);
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .amenities-container {
+            padding: var(--space-md);
+            background: var(--light);
+            border-radius: var(--radius-md);
+        }
+
+        .amenities-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 var(--space-xs);
+            margin: var(--space-md) 0;
+        }
+
+        .amenities-table tr {
+            background: var(--white);
+            border-radius: var(--radius-sm);
+        }
+
+        .amenities-table td {
+            padding: var(--space-sm);
+            vertical-align: middle;
+        }
+
+        .amenities-table td:first-child {
+            border-top-left-radius: var(--radius-sm);
+            border-bottom-left-radius: var(--radius-sm);
+            text-align: center;
+            width: 40px;
+        }
+
+        .amenities-table td:last-child {
+            border-top-right-radius: var(--radius-sm);
+            border-bottom-right-radius: var(--radius-sm);
+            text-align: right;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .amenities-table i {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .transport-time {
+            background: var(--white);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin-top: var(--space-lg);
+        }
+
+        .transport-time h4 {
+            margin-bottom: var(--space-sm);
+            color: var(--secondary);
+        }
+
+        .transport-time ul {
+            list-style: none;
+        }
+
+        .transport-time li {
+            margin-bottom: var(--space-xs);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .transport-time strong {
+            color: var(--primary-dark);
+        }
+
+        @media (max-width: 992px) {
+            .location-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .map-container {
+                padding-bottom: 60%;
+                /* More square on tablets */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .map-container {
+                padding-bottom: 100%;
+                /* Tall on mobile */
+            }
+
+            .amenities-table td {
+                padding: var(--space-xs) var(--space-sm);
+            }
+
+            .amenities-table td:last-child {
+                font-size: 0.9rem;
+            }
+        }
+
+        #project-map {
+            height: 400px;
+            width: 100%;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .amenities-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .amenities-table tr {
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .amenities-table td {
+            padding: var(--space-sm);
+        }
+
+        .amenities-table i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: var(--light);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            margin: 0 var(--space-md);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background: var(--white);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: var(--space-xl) auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--primary-light);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: var(--space-md);
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Price Comparison */
+        .price-section {
+            background: var(--light);
+        }
+
+        .price-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            max-width: 800px;
+            margin: var(--space-xl) auto;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .price-column {
+            padding: var(--space-lg);
+            text-align: center;
+        }
+
+        .price-column:first-child {
+            border-right: 1px solid var(--light-gray);
+        }
+
+        .price-header {
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+            color: var(--primary);
+        }
+
+        .price-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .price-percent {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-sm);
+            background: var(--primary-light);
+            color: var(--white);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+
+            .overview-grid,
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .price-column:first-child {
+                border-right: none;
+                border-bottom: 1px solid var(--light-gray);
+            }
+
+            .timeline::before {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <!-- Video element with muted autoplay and loop -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="balaji-v2.MP4" type="video/mp4">
+            <!-- Fallback image if video can't load -->
+            <img src="balaji-1.JPG" alt="Balaji Vishwa Project" style="object-fit: cover; width: 100%; height: 100%;">
+        </video>
+
+        <!-- Gradient overlay -->
+        <div class="video-overlay"></div>
+
+        <div class="hero-content container">
+            <h1 class="project-title">Balaji Vishwa</h1>
+            <p class="project-tagline">Premium plotted development in Bhekrai Nagar with 400+ residential plots</p>
+
+            <div class="project-highlights">
+                <div class="highlight-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bhekrai Nagar, Pune</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Completed: 2018</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-vector-square"></i>
+                    <span>400+ Plots</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-road"></i>
+                    <span>40ft Wide Roads</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-section">
+        <div class="container">
+            <h2 class="section-title">Project Overview</h2>
+
+            <div class="overview-grid">
+                <div>
+                    <p>Balaji Vishwa is one of our flagship plotted developments in the rapidly growing Bhekrai Nagar
+                        area of Pune. Completed in 2018, this project set new standards for plotted developments with
+                        its premium infrastructure and thoughtful planning.</p>
+                    <p>The development features wide 40ft internal roads, underground electrification, and a
+                        comprehensive water supply system. With over 400 plots ranging from 1200 to 2400 sq.ft., Balaji
+                        Vishwa caters to diverse home-building needs.</p>
+                </div>
+                <div>
+                    <h3>Key Features:</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Premium 40ft wide internal roads with footpaths</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Underground electricity with individual meters</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 water supply with overhead tank</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Comprehensive storm water drainage system</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Green belt development with native plants</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Children's play area and community space</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Project Gallery</h2>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="balaji-1.JPG" alt="Balaji Vishwa Entrance">
+                </div>
+                <div class="gallery-item">
+                    <img src="balaji-2.JPG" alt="Road Infrastructure">
+                </div>
+                <div class="gallery-item">
+                    <img src="balaji-3.JPG" alt="Green Belt Area">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="container">
+        <div class="video-container">
+            <video controls poster="balaji-1.JPG" autoplay muted loop playsinline>
+                <source src="Balaji-V1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <h2 class="section-title">Prime Location Advantages</h2>
+
+            <div class="location-grid">
+                <!-- Google Maps Embed -->
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.308197990253!2d73.9642318!3d18.4744714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e921847ac037%3A0x74fb6cbf0346ee80!2sBalaji%20Vishva%20Phursungi!5e0!3m2!1sen!2sin!4v1711234567890!5m2!1sen!2sin&markers=color:red%7C18.4744714,73.9664236"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="Balaji Vishwa Exact Location"
+                        aria-label="Google Maps location of Balaji Vishwa in Phursungi">
+                    </iframe>
+                </div>
+
+                <div class="amenities-container">
+                    <h3>Precisely Located Near</h3>
+                    <table class="amenities-table">
+                        <tr>
+                            <td><i class="fas fa-university"></i></td>
+                            <td>FLAME University</td>
+                            <td>3.8 km (8 min drive)</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-industry"></i></td>
+                            <td>MIDC Industrial Area</td>
+                            <td>4.2 km (9 min drive)</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-medkit"></i></td>
+                            <td>Lavasa Hospital</td>
+                            <td>5.1 km (11 min drive)</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-shopping-cart"></i></td>
+                            <td>Phoenix Marketcity</td>
+                            <td>7.5 km (15 min drive)</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-train"></i></td>
+                            <td>Hadapsar Railway Station</td>
+                            <td>6.3 km (14 min drive)</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-plane"></i></td>
+                            <td>Pune Airport</td>
+                            <td>14 km (25 min drive)</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-road"></i></td>
+                            <td>Pune-Solapur Highway</td>
+                            <td>1.8 km (4 min drive)</td>
+                        </tr>
+                    </table>
+
+                    <div class="transport-time">
+                        <h4>Approximate Travel Times:</h4>
+                        <ul>
+                            <li><strong>To Hinjewadi IT Park:</strong> 18 km (35 mins via NH 65)</li>
+                            <li><strong>To Pune Station:</strong> 12 km (25 mins)</li>
+                            <li><strong>To Mumbai Expressway:</strong> 22 km (40 mins)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <p>"The roads and drainage system at Balaji Vishwa are better than many premium societies in Pune.
+                        We've had no water logging even during heavy rains."</p>
+                    <div class="testimonial-author">
+                        <img src="client1.jpg" alt="Mr. Sharma">
+                        <div>
+                            <h4>Mr. Sharma</h4>
+                            <p>Plot Owner Since 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Development Timeline</h2>
+
+            <div class="timeline">
+                <div class="timeline-item complete">
+                    <div class="timeline-date">2016 Q3</div>
+                    <div class="timeline-content">Land Acquisition Completed</div>
+                </div>
+                <div class="timeline-item complete">
+                    <div class="timeline-date">2017 Q1</div>
+                    <div class="timeline-content">Road Development Started</div>
+                </div>
+                <div class="timeline-item complete">
+                    <div class="timeline-date">2017 Q3</div>
+                    <div class="timeline-content">Utility Infrastructure Installation</div>
+                </div>
+                <div class="timeline-item complete">
+                    <div class="timeline-date">2018 Q1</div>
+                    <div class="timeline-content">Plot Demarcation Completed</div>
+                </div>
+                <div class="timeline-item complete">
+                    <div class="timeline-date">2018 Q3</div>
+                    <div class="timeline-content">Project Handover to Customers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Comparison Section -->
+    <section class="price-section">
+        <div class="container">
+            <h2 class="section-title">Price Appreciation</h2>
+
+            <div class="price-comparison">
+                <div class="price-column">
+                    <div class="price-header">Launch Price (2016)</div>
+                    <div class="price-amount">₹1,700/sq.ft.</div>
+                    <p>Initial offering price during project launch</p>
+                </div>
+                <div class="price-column">
+                    <div class="price-header">Current Market Value (2025)</div>
+                    <div class="price-amount">₹3,500/sq.ft.</div>
+                    <div class="price-percent">+106% Appreciation</div>
+                    <p>Recent transactions in the development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Additional protection against video download
+        document.addEventListener('contextmenu', function (e) {
+            if (e.target.tagName === 'VIDEO') {
+                e.preventDefault();
+            }
+        });
+
+        // Force video to play (some mobile browsers require this)
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.querySelector('.hero-video');
+            if (video) {
+                video.play().catch(error => {
+                    // Fallback to muted autoplay if needed
+                    video.muted = true;
+                    video.play();
+                });
+            }
+        });
+        // Initialize Google Maps
+        function initMap() {
+            const location = { lat: 18.4769, lng: 73.8815 }; // Bhekrai Nagar coordinates
+            const map = new google.maps.Map(document.getElementById("project-map"), {
+                zoom: 14,
+                center: location,
+                styles: [
+                    {
+                        featureType: "poi",
+                        stylers: [{ visibility: "off" }]
+                    }
+                ]
+            });
+
+            new google.maps.Marker({
+                position: location,
+                map: map,
+                title: "Balaji Vishwa"
+            });
+        }
+
+        // Load Google Maps API
+        function loadGoogleMaps() {
+            const script = document.createElement('script');
+            script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap`;
+            script.async = true;
+            script.defer = true;
+            document.body.appendChild(script);
+        }
+
+        // Load when in view
+        const mapSection = document.querySelector('.location-section');
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                loadGoogleMaps();
+                observer.unobserve(mapSection);
+            }
+        });
+
+        observer.observe(mapSection);
+
+        // Simple testimonial slider
+        let currentTestimonial = 0;
+        const testimonials = [
+            {
+                quote: "The roads and drainage system at Balaji Vishwa are better than many premium societies in Pune. We've had no water logging even during heavy rains.",
+                name: "Mr. Sharma",
+                role: "Plot Owner Since 2019",
+                image: "client1.jpg"
+            },
+            {
+                quote: "Excellent investment decision. Our plot value has nearly tripled in just 5 years. The location is developing much faster than we anticipated.",
+                name: "Mrs. Patel",
+                role: "NRI Investor",
+                image: "client2.jpg"
+            }
+        ];
+
+        function updateTestimonial() {
+            const testimonial = testimonials[currentTestimonial];
+            const card = document.querySelector('.testimonial-card');
+
+            card.innerHTML = `
+        <p>"${testimonial.quote}"</p>
+        <div class="testimonial-author">
+          <img src="${testimonial.image}" alt="${testimonial.name}">
+          <div>
+            <h4>${testimonial.name}</h4>
+            <p>${testimonial.role}</p>
+          </div>
+        </div>
+      `;
+
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        }
+
+        // Rotate testimonials every 8 seconds
+        setInterval(updateTestimonial, 8000);
+    </script>
+</body>
+
+</html>

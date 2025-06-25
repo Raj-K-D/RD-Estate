@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Narayan Park | Canal View Plots by Kshitij Realty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2E7D32;
+      --primary-light: #4CAF50;
+      --primary-dark: #1B5E20;
+      --secondary: #263238;
+      --accent: #1976D2;
+      --light: #F8F9FA;
+      --dark: #212529;
+      --text: #4A4A4A;
+      --gray: #6C757D;
+      --light-gray: #E9ECEF;
+      --white: #FFFFFF;
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 2rem;
+      --space-lg: 3rem;
+      --space-xl: 4rem;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+      --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--light);
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+    
+    section {
+      padding: var(--space-xl) 0;
+    }
+    
+    /* Project Hero */
+    .project-hero {
+      position: relative;
+      height: 80vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      overflow: hidden;
+    }
+    
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      object-fit: cover;
+    }
+    
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .project-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: var(--space-sm);
+      color: var(--white);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .project-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      margin-bottom: var(--space-lg);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    
+    .project-highlights {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+      background: rgba(0,0,0,0.7);
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    
+    .highlight-item i {
+      color: var(--primary-light);
+      font-size: 1.2rem;
+    }
+    
+    /* Section Titles */
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      margin: var(--space-sm) auto;
+      border-radius: var(--radius-sm);
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+      color: var(--gray);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Gallery Section */
+    .gallery-section {
+      background-color: var(--white);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+    
+    .gallery-item {
+      height: 250px;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Video Section */
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: var(--space-xl) auto;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .video-container video {
+      width: 100%;
+      display: block;
+    }
+    
+    /* Location Section */
+    .location-section {
+      background-color: var(--white);
+    }
+    
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+      align-items: center;
+      margin-top: var(--space-lg);
+    }
+    
+    .map-container {
+      position: relative;
+      height: 400px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .amenities-container {
+      padding: var(--space-md);
+      background: var(--light);
+      border-radius: var(--radius-md);
+    }
+    
+    .amenities-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 var(--space-xs);
+    }
+    
+    .amenities-table tr {
+      background: var(--white);
+    }
+    
+    .amenities-table td {
+      padding: var(--space-sm);
+      vertical-align: middle;
+    }
+    
+    .amenities-table i {
+      color: var(--primary);
+      font-size: 1.2rem;
+      width: 30px;
+      text-align: center;
+    }
+    
+    /* Price Comparison */
+    .price-section {
+      background-color: var(--light);
+    }
+    
+    .price-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+      max-width: 800px;
+      margin: var(--space-xl) auto;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .price-column {
+      padding: var(--space-lg);
+      text-align: center;
+    }
+    
+    .price-column:first-child {
+      border-right: 1px solid var(--light-gray);
+    }
+    
+    .price-header {
+      font-size: 1.2rem;
+      margin-bottom: var(--space-md);
+      color: var(--primary);
+    }
+    
+    .price-amount {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .price-percent {
+      display: inline-block;
+      padding: var(--space-xs) var(--space-sm);
+      background: var(--primary-light);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+    }
+    
+    /* Timeline Section */
+    .timeline-section {
+      background-color: var(--light);
+      padding: var(--space-xl) 0;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: var(--space-xl) auto;
+      padding-left: var(--space-lg);
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 7px;
+      width: 2px;
+      background: var(--primary-light);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: var(--space-xl);
+      padding-left: var(--space-lg);
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 3px var(--primary);
+    }
+    
+    .timeline-date {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: var(--space-xs);
+    }
+    
+    /* Testimonials */
+    .testimonials-section {
+      background-color: var(--white);
+    }
+    
+    .testimonial-card {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--space-lg);
+      background: var(--light);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: var(--space-md);
+      position: relative;
+    }
+    
+    .testimonial-text::before,
+    .testimonial-text::after {
+      content: '"';
+      font-size: 2rem;
+      color: var(--primary);
+      opacity: 0.3;
+      position: absolute;
+    }
+    
+    .testimonial-text::before {
+      top: -10px;
+      left: -15px;
+    }
+    
+    .testimonial-text::after {
+      bottom: -20px;
+      right: -15px;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    
+    .testimonial-author img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    /* Video Protection */
+    video {
+      pointer-events: none;
+    }
+    
+    .video-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .map-container {
+        height: 350px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .project-hero {
+        height: 90vh;
+        min-height: 500px;
+      }
+      
+      .project-highlights {
+        gap: var(--space-md);
+        padding: var(--space-sm);
+      }
+      
+      .price-comparison {
+        grid-template-columns: 1fr;
+      }
+      
+      .price-column:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--light-gray);
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Project Hero -->
+  <section class="project-hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="canal.JPG">
+      <source src="Canal.mp4" type="video/mp4">
+      <img src="canal.JPG" alt="Narayan Park Project" style="object-fit: cover; width: 100%; height: 100%;">
+    </video>
+    
+    <div class="video-overlay"></div>
+    
+    <div class="hero-content container">
+      <h1 class="project-title">Narayan Park</h1>
+      <p class="project-tagline">Scenic plotted development with canal views in Loni Kalbhor</p>
+      
+      <div class="project-highlights">
+        <div class="highlight-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Loni Kalbhor, Pune</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-calendar-alt"></i>
+          <span>Completed: 2021</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-vector-square"></i>
+          <span>60 Premium Plots</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-water"></i>
+          <span>Canal View Location</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="container">
+    <h2 class="section-title">Project Overview</h2>
+    <p class="section-subtitle">A serene plotted development offering picturesque canal views and green surroundings</p>
+    
+    <div style="max-width: 800px; margin: 0 auto;">
+      <p>Narayan Park is one of our most scenic developments, strategically located along a peaceful canal in Loni Kalbhor. Completed in 2021, this project offers 60 carefully planned residential plots with premium green spaces.</p>
+      <p>The development features wide internal roads, underground electrification, and a comprehensive water supply system. With plot sizes ranging from 1200 to 1800 sq.ft., Narayan Park combines natural beauty with modern infrastructure.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="container">
+      <h2 class="section-title">Project Gallery</h2>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="canal.jpg" alt="Canal View from Plots" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="canal2.JPG" alt="Narayan Park Layout Plan" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="canal3.png" alt="Wide Internal Roads" loading="lazy">
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Walkthrough -->
+  <section class="container">
+    <div class="video-container">
+      <video controls poster="canal.JPG" autoplay muted loop playsinline >
+        <source src="Canal.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section class="location-section">
+    <div class="container">
+      <h2 class="section-title">Prime Location Advantages</h2>
+      
+      <div class="location-grid">
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d562.5494014971512!2d74.00085291462982!3d18.467064434457907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1750515106966!5m2!1sen!2sin" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Narayan Park Location Map">
+          </iframe>
+        </div>
+        
+        <div class="amenities-container">
+          <h3>Key Amenities Nearby</h3>
+          <table class="amenities-table">
+            <tr>
+              <td><i class="fas fa-water"></i></td>
+              <td><strong>Narayan Canal</strong></td>
+              <td>Adjacent to project</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-university"></i></td>
+              <td><strong>MIT University</strong></td>
+              <td>3 km (8 min drive)</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-shopping-cart"></i></td>
+              <td><strong>Loni Market</strong></td>
+              <td>2.5 km (7 min drive)</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-train"></i></td>
+              <td><strong>Loni Railway Station</strong></td>
+              <td>3 km (8 min drive)</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-tree"></i></td>
+              <td><strong>Community Park</strong></td>
+              <td>500 m walking distance</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-gas-pump"></i></td>
+              <td><strong>Petrol Pump</strong></td>
+              <td>3 km (8 min drive)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Price Appreciation -->
+  <section class="price-section">
+    <div class="container">
+      <h2 class="section-title">Investment Growth</h2>
+      <p class="section-subtitle">Consistent appreciation in one of Loni Kalbhor's most scenic locations</p>
+      
+      <div class="price-comparison">
+        <div class="price-column">
+          <div class="price-header">Launch Price (2021)</div>
+          <div class="price-amount">₹600/sq.ft.</div>
+          <p>Initial offering price during project launch</p>
+        </div>
+        <div class="price-column">
+          <div class="price-header">Current Market Value (2025)</div>
+          <div class="price-amount">₹900/sq.ft.</div>
+          <div class="price-percent">+50% Appreciation</div>
+          <p>Recent transactions in the development</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="section-title">Development Timeline</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">March 2019</div>
+          <h3>Land Acquisition</h3>
+          <p>Secured prime canal-facing land after thorough due diligence and environmental checks</p>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">September 2019</div>
+          <h3>Approvals & Planning</h3>
+          <p>Obtained all necessary approvals from Pune Metropolitan Region Development Authority</p>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">April 2020</div>
+          <h3>Infrastructure Development</h3>
+          <p>Completed road construction, drainage systems along the canal, and electrical works</p>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">June 2021</div>
+          <h3>Project Completion</h3>
+          <p>Final landscaping completed and possession handed over to plot owners</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      
+      <div class="testimonial-card">
+        <p class="testimonial-text">The canal view from our plot at Narayan Park is priceless. We wake up to birdsong and the gentle sound of water every morning. The 50% appreciation in just 2 years is an added bonus!</p>
+        <div class="testimonial-author">
+          <img src="client-mr-patil.jpg" alt="Mr. Patil">
+          <div>
+            <h4>Mr. Sanjay Patil</h4>
+            <p>Plot Owner Since 2021</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Video Protection and Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Auto-play hero video
+      const heroVideo = document.querySelector('.hero-video');
+      if(heroVideo) {
+        heroVideo.play().catch(error => {
+          heroVideo.muted = true;
+          heroVideo.play();
+        });
+      }
+      
+      // Prevent video download
+      document.addEventListener('contextmenu', function(e) {
+        if(e.target.tagName === 'VIDEO') {
+          e.preventDefault();
+        }
+      }, false);
+      
+      // Disable video download via keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+          e.preventDefault();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

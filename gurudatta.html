@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gurudatta Park Plots in Bhekrai Nagar (Near Hadpsar) | ₹2400-3000/sq.ft | Pune</title>
+  <meta name="description" content="Premium residential plots in Gurudatta Park, Bhekrai Nagar near Hadpsar. 1000-1500 sq.ft. plots with 40ft roads, water supply, and electricity. Just 10km from Pune city. Book a site visit today!">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Residence",
+      "name": "Gurudatta Park",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bhekrai Nagar",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra"
+      },
+      "description": "Premium residential plots near Hadpsar with 40ft roads and modern amenities",
+      "priceRange": "₹2400-3000/sq.ft",
+      "image": "gurudatta.jpg"
+    }
+  </script>
+  
+  <style>
+    :root {
+      --primary: #2E7D32;
+      --primary-light: #4CAF50;
+      --primary-dark: #1B5E20;
+      --secondary: #263238;
+      --accent: #FFC107;
+      --light: #F5F5F5;
+      --dark: #212121;
+      --text: #424242;
+      --gray: #757575;
+      --light-gray: #EEEEEE;
+      --white: #FFFFFF;
+      
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+      --shadow-xl: 0 20px 40px rgba(0,0,0,0.2);
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --space-xl: 4rem;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--white);
+      overflow-x: hidden;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5 {
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--dark);
+    }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+    
+    .text-accent { color: var(--accent); }
+    .text-primary { color: var(--primary); }
+    
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+    
+    section {
+      padding: var(--space-xl) 0;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border: none;
+      cursor: pointer;
+      gap: var(--space-xs);
+      font-size: 0.9rem;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .btn-secondary {
+      background-color: var(--accent);
+      color: var(--dark);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .btn-secondary:hover {
+      background-color: #FFB300;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+    
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(255,255,255,0.98);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      padding: var(--space-sm) 0;
+    }
+    
+    .header.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: var(--space-lg);
+    }
+    
+    .nav-links a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    /* Hero Section */
+    .plot-hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      margin-top: -80px;
+      overflow: hidden;
+    }
+    
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+    
+    .hero-badge {
+      background-color: var(--accent);
+      color: var(--dark);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-bottom: var(--space-md);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    
+    .hero-price {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: var(--space-md) 0;
+      color: var(--white);
+      display: flex;
+      align-items: flex-end;
+      gap: var(--space-xs);
+    }
+    
+    .price-per {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 0.2rem;
+    }
+    
+    .trust-badges {
+      display: flex;
+      gap: var(--space-sm);
+      margin: var(--space-md) 0;
+      flex-wrap: wrap;
+    }
+    
+    .trust-badge {
+      background: rgba(255,255,255,0.2);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+    
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-xl) 0;
+    }
+    
+    .feature-card {
+      background: var(--white);
+      padding: var(--space-lg);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-md);
+      font-size: 1.5rem;
+    }
+    
+    /* Gallery */
+    .media-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-sm);
+      margin: var(--space-xl) 0;
+    }
+    
+    .gallery-item {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 250px;
+      position: relative;
+    }
+    
+    .gallery-item img, .gallery-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img, .gallery-item:hover video {
+      transform: scale(1.05);
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: white;
+      padding: var(--space-md);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+    
+    .main-video {
+      grid-column: span 2;
+      grid-row: span 2;
+      height: 510px;
+    }
+    
+    /* Location Map */
+    .location-map {
+      height: 500px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: var(--space-md);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .location-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Highlights */
+    .highlight-card {
+      background: var(--primary);
+      color: var(--white);
+      padding: var(--space-lg);
+      border-radius: var(--radius-lg);
+      margin: var(--space-xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .highlight-card::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+      background: var(--white);
+      padding: var(--space-lg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      margin: var(--space-xl) 0;
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 5rem;
+      color: var(--primary);
+      opacity: 0.1;
+      font-family: serif;
+      line-height: 1;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('gurudatta.jpg') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      padding: var(--space-xl) 0;
+    }
+    
+    /* Sticky CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+      padding: var(--space-sm);
+      z-index: 999;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .sticky-cta.visible {
+      transform: translateY(0);
+    }
+    
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: var(--space-lg);
+      right: var(--space-lg);
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: var(--shadow-lg);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .media-gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .main-video {
+        grid-column: span 2;
+        height: 400px;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.75rem; }
+      
+      .plot-hero {
+        min-height: 600px;
+      }
+      
+      .hero-price {
+        font-size: 2.5rem;
+      }
+      
+      .media-gallery {
+        grid-template-columns: 1fr;
+      }
+      
+      .main-video {
+        grid-column: span 1;
+        height: 300px;
+      }
+      
+      .sticky-cta .btn {
+        width: 100%;
+        margin-bottom: var(--space-xs);
+      }
+      
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 80px;
+        right: var(--space-md);
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate {
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">Gurudatta Park</a>
+      <div class="nav-links">
+        <a href="#plots">Plots</a>
+        <a href="#location">Location</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+917758003828"><i class="fas fa-phone"></i> Call</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="plot-hero" id="home">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="gurudatta.MP4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content animate">
+        <span class="hero-badge">Near Pune City</span>
+        <h1>Premium Plots at Gurudatta Park</h1>
+        <div class="hero-price">
+          ₹2,400 <span class="price-per">per sq.ft.</span>
+        </div>
+        <p>Premium residential plots in Bhekrai Nagar near Hadpsar with 40ft roads, water supply, and just 10km from Pune city center.</p>
+        
+        <div class="trust-badges">
+          <span class="trust-badge"><i class="fas fa-check-circle"></i> Clear Titles</span>
+          <span class="trust-badge"><i class="fas fa-map-marked-alt"></i> Prime Location</span>
+          <span class="trust-badge"><i class="fas fa-road"></i> 40ft Blacktop Roads</span>
+        </div>
+        
+        <div class="hero-actions" style="margin-top: var(--space-lg);">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-calendar-alt"></i> Book Site Visit
+          </a>
+          <a href="Gurudatta-Park-Broucher.pdf" class="btn btn-secondary">
+            <i class="fas fa-download"></i> Download Brochure
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Facts -->
+  <section class="container" style="margin-top: -80px; position: relative; z-index: 10;" id="plots">
+    <div class="features-grid">
+      <div class="feature-card animate delay-1">
+        <div class="feature-icon">
+          <i class="fas fa-ruler-combined"></i>
+        </div>
+        <h4>Plot Sizes</h4>
+        <p>1000-1500 sq.ft. premium residential plots</p>
+      </div>
+      
+      <div class="feature-card animate delay-1">
+        <div class="feature-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h4>Prime Location</h4>
+        <p>Bhekrai Nagar near Hadpsar, Pune</p>
+      </div>
+      
+      <div class="feature-card animate delay-1">
+        <div class="feature-icon">
+          <i class="fas fa-road"></i>
+        </div>
+        <h4>40ft Roads</h4>
+        <p>Wide blacktop roads with proper drainage</p>
+      </div>
+      
+      <div class="feature-card animate delay-1">
+        <div class="feature-icon">
+          <i class="fas fa-city"></i>
+        </div>
+        <h4>City Proximity</h4>
+        <p>Just 10km from Pune city center</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Gallery -->
+  <section class="container">
+    <h2 class="animate">Explore Gurudatta Park</h2>
+    <p class="animate delay-1">Experience the premium location and infrastructure through our gallery</p>
+    
+    <div class="media-gallery">
+      <div class="gallery-item main-video animate delay-1">
+        <video poster="gurudatta.jpg" autoplay muted loop playsinline>
+          <source src="gurudatta.MP4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="gallery-caption">Gurudatta Park Overview</div>
+      </div>
+      <div class="gallery-item animate delay-2">
+        <img src="gurudatta.jpg" alt="Gurudatta Park Residential Plots in Bhekrai Nagar">
+        <div class="gallery-caption">Plot Views</div>
+      </div>
+      <div class="gallery-item animate delay-2">
+        <img src="gurudatta.jpg" alt="40ft Wide Roads at Gurudatta Park">
+        <div class="gallery-caption">40ft Wide Roads</div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Location Highlights -->
+  <section class="container" id="location">
+    <div class="highlight-card animate">
+      <h2>Why This Location?</h2>
+      <div style="margin-top: var(--space-md);">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+          <div>
+            <h4 style="color: var(--accent); margin-bottom: var(--space-sm);">Connectivity</h4>
+            <ul style="list-style: none;">
+              <li style="margin-bottom: var(--space-xs); display: flex; align-items: center; gap: var(--space-xs);">
+                <i class="fas fa-check" style="color: var(--accent);"></i> Just 10km from Pune city center
+              </li>
+              <li style="margin-bottom: var(--space-xs); display: flex; align-items: center; gap: var(--space-xs);">
+                <i class="fas fa-check" style="color: var(--accent);"></i> Easy access to Hadpsar Industrial Area
+              </li>
+              <li style="margin-bottom: var(--space-xs); display: flex; align-items: center; gap: var(--space-xs);">
+                <i class="fas fa-check" style="color: var(--accent);"></i> Well-connected to major highways
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color: var(--accent); margin-bottom: var(--space-sm);">Amenities</h4>
+            <ul style="list-style: none;">
+              <li style="margin-bottom: var(--space-xs); display: flex; align-items: center; gap: var(--space-xs);">
+                <i class="fas fa-check" style="color: var(--accent);"></i> 40ft wide blacktop roads
+              </li>
+              <li style="margin-bottom: var(--space-xs); display: flex; align-items: center; gap: var(--space-xs);">
+                <i class="fas fa-check" style="color: var(--accent);"></i> Reliable water supply
+              </li>
+              <li style="margin-bottom: var(--space-xs); display: flex; align-items: center; gap: var(--space-xs);">
+                <i class="fas fa-check" style="color: var(--accent);"></i> Electricity connections
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Location -->
+  <section class="container">
+    <h2 class="animate">Prime Location Map</h2>
+    <p class="animate delay-1">Strategic location in Bhekrai Nagar with excellent connectivity to Pune city</p>
+    
+    <div class="location-map animate delay-2">
+      <iframe src="https://www.google.com/maps/embed?pb=!4v1750603537023!6m8!1m7!1sZ3c2OSn-3R0EV_qtWAlXIA!2m2!1d18.47108985412514!2d73.96027515708151!3f16.039722443751202!4f-3.9914468706185176!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- Investment Potential -->
+  <section class="container" id="pricing">
+    <h2 class="animate">Smart Investment</h2>
+    <p class="animate delay-1">Why Gurudatta Park plots are the perfect investment</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-top: var(--space-xl);">
+      <div class="animate delay-1">
+        <h3 style="margin-bottom: var(--space-sm);">Growth Potential</h3>
+        <p>With the rapid development of Hadpsar and proximity to Pune city, property values in this location are expected to appreciate significantly:</p>
+        <ul style="list-style: none; margin-top: var(--space-md);">
+          <li style="margin-bottom: var(--space-sm); display: flex; align-items: flex-start; gap: var(--space-sm);">
+            <div style="background: var(--primary); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="fas fa-chart-line" style="font-size: 0.8rem;"></i>
+            </div>
+            <span>20-25% expected annual appreciation</span>
+          </li>
+          <li style="margin-bottom: var(--space-sm); display: flex; align-items: flex-start; gap: var(--space-sm);">
+            <div style="background: var(--primary); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="fas fa-industry" style="font-size: 0.8rem;"></i>
+            </div>
+            <span>Proximity to Hadpsar Industrial Area</span>
+          </li>
+          <li style="margin-bottom: var(--space-sm); display: flex; align-items: flex-start; gap: var(--space-sm);">
+            <div style="background: var(--primary); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="fas fa-city" style="font-size: 0.8rem;"></i>
+            </div>
+            <span>Just 10km from Pune city center</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="animate delay-2">
+        <h3 style="margin-bottom: var(--space-sm);">Payment Options</h3>
+        <p>We offer flexible payment plans to suit your needs:</p>
+        
+        <div style="background: var(--light); border-radius: var(--radius-md); padding: var(--space-md); margin-top: var(--space-md);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-sm); padding-bottom: var(--space-sm); border-bottom: 1px solid var(--light-gray);">
+            <span>Plan A</span>
+            <strong>10% Down Payment</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-sm); padding-bottom: var(--space-sm); border-bottom: 1px solid var(--light-gray);">
+            <span>Plan B</span>
+            <strong>20% Down + Bank Loan</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>Plan C</span>
+            <strong>Full Payment (5% Discount)</strong>
+          </div>
+        </div>
+        
+        <div style="background: var(--primary); color: white; padding: var(--space-md); border-radius: var(--radius-md); margin-top: var(--space-md);">
+          <h4 style="color: var(--accent);">Special Offer</h4>
+          <p style="margin-top: var(--space-xs);">Book before month-end and get free registration worth ₹75,000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="container">
+    <div class="testimonial-card animate">
+      <div style="display: grid; grid-template-columns: 100px 1fr; gap: var(--space-lg);">
+        <img src="client.jpg" alt="Happy Client Amit Deshpande" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary);">
+        <div>
+          <p style="font-style: italic; font-size: 1.1rem; margin-bottom: var(--space-sm); position: relative; z-index: 2;">
+            "I invested in Gurudatta Park for its proximity to Pune city. The location is perfect - close enough to the city for work but far enough to enjoy peaceful living. The 40ft roads and planned infrastructure make it a great long-term investment."
+          </p>
+          <h4 style="color: var(--primary);">Amit Deshpande</h4>
+          <p style="color: var(--gray);">Plot Owner Since 2021</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <h2 class="animate" style="color: white;">Ready to Invest in Your Future?</h2>
+      <p class="animate delay-1" style="color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto var(--space-lg);">
+        Limited plots available at this prime location near Pune city. Book your site visit today before prices increase.
+      </p>
+      <div class="animate delay-2">
+        <a href="tel:+917758003828" class="btn btn-secondary" style="margin-right: var(--space-sm);">
+          <i class="fas fa-phone"></i> Call Now
+        </a>
+        <a href="https://wa.me/917758003828" class="btn btn-primary">
+          <i class="fab fa-whatsapp"></i> WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: var(--space-sm);">
+        <img src="gurudatta.jpg" alt="Gurudatta Park Plot" style="width: 50px; height: 50px; border-radius: var(--radius-sm);">
+        <div>
+          <div style="font-weight: 600;">Gurudatta Park</div>
+          <div style="font-size: 0.9rem; color: var(--gray);">From ₹2,400/sq.ft.</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: var(--space-sm);">
+        <a href="tel:+919022003828" class="btn btn-primary">
+          <i class="fas fa-phone"></i> Call Now
+        </a>
+        <a href="https://wa.me/919022003828" class="btn btn-secondary">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919022003828" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Sticky Header
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Sticky CTA
+    window.addEventListener('scroll', function() {
+      const stickyCta = document.querySelector('.sticky-cta');
+      if (window.scrollY > 500) {
+        stickyCta.classList.add('visible');
+      } else {
+        stickyCta.classList.remove('visible');
+      }
+    });
+    
+    // Animate elements on scroll
+    const animateElements = document.querySelectorAll('.animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animateElements.forEach(el => {
+      el.style.opacity = 0;
+      observer.observe(el);
+    });
+    
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Auto-play hero video
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroVideo = document.querySelector('.hero-video');
+      if (heroVideo) {
+        heroVideo.play().catch(e => console.log('Auto-play prevented:', e));
+      }
+    });
+  </script>
+</body>
+</html>
